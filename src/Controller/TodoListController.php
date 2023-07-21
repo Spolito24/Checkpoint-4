@@ -6,7 +6,6 @@ use App\Entity\Task;
 use App\Entity\TodoList;
 use App\Form\TodoListType;
 use App\Repository\TaskRepository;
-use App\Repository\TodoListRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;

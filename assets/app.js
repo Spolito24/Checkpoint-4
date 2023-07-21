@@ -38,11 +38,11 @@ displayTodoHigh.addEventListener("click", function () {
   if (todoHighSidebar.style.display === "none") {
     todoHighSidebar.style.display = "block";
     displayTodoHigh.innerHTML =
-      '<i class="bi bi-caret-up-fill fs-3"></i> High Priority';
+      '<i class="bi bi-caret-down-fill fs-3"></i> High Priority';
   } else {
     todoHighSidebar.style.display = "none";
     displayTodoHigh.innerHTML =
-      '<i class="bi bi-caret-down-fill fs-3"></i> High Priority';
+      '<i class="bi bi-caret-right-fill fs-3"></i> High Priority';
   }
 });
 
@@ -53,11 +53,11 @@ displayTodoMedium.addEventListener("click", function () {
   if (todoMediumSidebar.style.display === "none") {
     todoMediumSidebar.style.display = "block";
     displayTodoMedium.innerHTML =
-      '<i class="bi bi-caret-up-fill fs-3"></i> Medium Priority';
+      '<i class="bi bi-caret-down-fill fs-3"></i> Medium Priority';
   } else {
     todoMediumSidebar.style.display = "none";
     displayTodoMedium.innerHTML =
-      '<i class="bi bi-caret-down-fill fs-3"></i> Medium Priority';
+      '<i class="bi bi-caret-right-fill fs-3"></i> Medium Priority';
   }
 });
 
@@ -68,11 +68,11 @@ displayTodoLow.addEventListener("click", function () {
   if (todoLowSidebar.style.display === "none") {
     todoLowSidebar.style.display = "block";
     displayTodoLow.innerHTML =
-      '<i class="bi bi-caret-up-fill fs-3"></i> Low Priority';
+      '<i class="bi bi-caret-down-fill fs-3"></i> Low Priority';
   } else {
     todoLowSidebar.style.display = "none";
     displayTodoLow.innerHTML =
-      '<i class="bi bi-caret-down-fill fs-3"></i> Low Priority';
+      '<i class="bi bi-caret-right-fill fs-3"></i> Low Priority';
   }
 });
 

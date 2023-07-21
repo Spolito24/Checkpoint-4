@@ -1,0 +1,42 @@
+<a href="{{ path('todo_list_show', { id: todo_list.id }) }}" class="card-link nav-link w-100 m-3">
+	<div class="card border border-secondary border-4 bg-primary card-shadow text-white rounded-5 p-0 h-100">
+		<h4 class="text-white mx-3 my-2">{{ todo_list.title|u.truncate(18, '...', true) }}</h4>
+
+		<hr class="border border-secondary border-2 opacity-100 my-0"/>
+
+		<ul class="my-3 h-50 list-unstyled">
+			{% if todo_list.tasks is not empty %}
+				{% for task in todo_list.tasks|slice(0,5) %}
+					<li>
+						{% if task.completed %}
+							<i class="bi bi-check-lg bg-success rounded-circle mx-2"></i>
+						{% else %}
+							<i class="bi bi-check-lg bg-secondary rounded-circle mx-2"></i>
+						{% endif %}
+						{{task.content|u.truncate(18, '...', true)}}
+					</li>
+				{% endfor %}
+			{% else %}
+				<li class="text-center">No task</li>
+			{% endif %}
+		</ul>
+
+		<hr class="border border-secondary border-2 opacity-100 my-0"/>
+
+		<div class="d-flex justify-content-center mx-2">
+			<div class="progress my-3 border border-white bg-secondary border-2 rounded-4 w-100" role="progressbar" aria-valuenow="{{computed.taskCompleted}}" aria-valuemin="0" aria-valuemax="{{todo_list.totalTasks}}">
+				{% if todo_list.totalTasks > 0 %}
+					<div class="progress-bar bg-success rounded-4 overflow-visible fs-6 fw-bold" style="width: {{ (computed.taskCompleted / todo_list.totalTasks) * 100 }}%">
+						{{computed.taskCompleted}}
+						/
+						{{todo_list.totalTasks}}
+					</div>
+				{% else %}
+					<div class="progress-bar bg-success rounded-4 overflow-visible fs-6 fw-bold" style="width: 0%">
+						No task
+					</div>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</a>

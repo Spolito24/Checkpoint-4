@@ -30,7 +30,7 @@
 
 					<li class="nav-item ps-3 py-1">
 						<a id="displayTodoHigh" class="nav-link fs-3 fw-semibold text-white">
-							<i class="bi bi-caret-down-fill fs-3"></i>
+							<i class="bi bi-caret-right-fill fs-3"></i>
 							High Priority
 						</a>
 					</li>
@@ -39,14 +39,14 @@
 						{% for todo_list in computed.todoListsHigh %}
 							<li class="nav-item pt-1">
 								<a href="{{ path('todo_list_show', { id: todo_list.id }) }}" class="nav-link fs-5">-
-									{{ todo_list.title|u.truncate(25, '...', true) }}</a>
+									{{ todo_list.title|u.truncate(20, '...', true) }}</a>
 							</li>
 						{% endfor %}
 					</ul>
 
 					<li class="nav-item ps-3 py-1">
 						<a id="displayTodoMedium" class="nav-link fs-3 fw-semibold text-white">
-							<i class="bi bi-caret-down-fill fs-3"></i>
+							<i class="bi bi-caret-right-fill fs-3"></i>
 							Medium Priority
 						</a>
 					</li>
@@ -55,14 +55,14 @@
 						{% for todo_list in computed.todoListsMedium %}
 							<li class="nav-item pt-1">
 								<a href="{{ path('todo_list_show', { id: todo_list.id }) }}" class="nav-link fs-5">-
-									{{ todo_list.title|u.truncate(25, '...', true) }}</a>
+									{{ todo_list.title|u.truncate(20, '...', true) }}</a>
 							</li>
 						{% endfor %}
 					</ul>
 
 					<li class="nav-item ps-3 py-1">
 						<a id="displayTodoLow" class="nav-link fs-3 fw-semibold text-white">
-							<i class="bi bi-caret-down-fill fs-3"></i>
+							<i class="bi bi-caret-right-fill fs-3"></i>
 							Low Priority
 						</a>
 					</li>
@@ -71,7 +71,7 @@
 						{% for todo_list in computed.todoListsLow %}
 							<li class="nav-item pt-1">
 								<a href="{{ path('todo_list_show', { id: todo_list.id }) }}" class="nav-link fs-5">-
-									{{ todo_list.title|u.truncate(25, '...', true) }}</a>
+									{{ todo_list.title|u.truncate(20, '...', true) }}</a>
 							</li>
 						{% endfor %}
 					</ul>

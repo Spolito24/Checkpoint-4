@@ -10,30 +10,7 @@
 			<hr class="border border-white border-1 opacity-100"/>
 			{% for todo_list in todoListsHigh %}
 				<div class="col-9 col-md-6 col-lg-4 col-xl-3 d-flex justify-content-center">
-					<a href="{{ path('todo_list_show', { id: todo_list.id }) }}" class="card-link nav-link w-100 m-3">
-						<div class="card border border-secondary border-4 bg-primary card-shadow text-white rounded-5 p-0 h-100">
-							<h4 class="text-white mx-3 my-2">{{ todo_list.title|u.truncate(18, '...', true) }}</h4>
-
-							<hr class="border border-secondary border-1 opacity-100 my-0"/>
-
-							<ul class="my-3 h-50 list-unstyled">
-								{% if todo_list.tasks is not empty %}
-									{% for task in todo_list.tasks|slice(0,5) %}
-										<li>
-											{% if task.completed %}
-												<i class="bi bi-check-lg bg-success rounded-circle mx-2"></i>
-											{% else %}
-												<i class="bi bi-check-lg bg-secondary rounded-circle mx-2"></i>
-											{% endif %}
-											{{task.content|u.truncate(18, '...', true)}}
-										</li>
-									{% endfor %}
-								{% else %}
-									<li class="text-center">No task</li>
-								{% endif %}
-							</ul>
-						</div>
-					</a>
+					{{ component('TodoCardComponent', { todo_list: todo_list}) }}
 				</div>
 			{% endfor %}
 		</div>
@@ -43,30 +20,7 @@
 			<hr class="border border-white border-1 opacity-100"/>
 			{% for todo_list in todoListsMedium %}
 				<div class="col-9 col-md-6 col-lg-4 col-xl-3 d-flex justify-content-center">
-					<a href="{{ path('todo_list_show', { id: todo_list.id }) }}" class="card-link nav-link w-100 m-3">
-						<div class="card border border-secondary border-4 bg-primary card-shadow text-white rounded-5 p-0 h-100">
-							<h4 class="text-white mx-3 my-2">{{ todo_list.title|u.truncate(18, '...', true) }}</h4>
-
-							<hr class="border border-secondary border-1 opacity-100 my-0"/>
-
-							<ul class="my-3 h-50 list-unstyled">
-								{% if todo_list.tasks is not empty %}
-									{% for task in todo_list.tasks|slice(0,5) %}
-										<li>
-											{% if task.completed %}
-												<i class="bi bi-check-lg bg-success rounded-circle mx-2"></i>
-											{% else %}
-												<i class="bi bi-check-lg bg-secondary rounded-circle mx-2"></i>
-											{% endif %}
-											{{task.content|u.truncate(18, '...', true)}}
-										</li>
-									{% endfor %}
-								{% else %}
-									<li class="text-center">No task</li>
-								{% endif %}
-							</ul>
-						</div>
-					</a>
+					{{ component('TodoCardComponent', { todo_list: todo_list})}}
 				</div>
 			{% endfor %}
 		</div>
@@ -76,30 +30,7 @@
 			<hr class="border border-white border-1 opacity-100"/>
 			{% for todo_list in todoListsLow %}
 				<div class="col-9 col-md-6 col-lg-4 col-xl-3 d-flex justify-content-center">
-					<a href="{{ path('todo_list_show', { id: todo_list.id }) }}" class="card-link nav-link w-100 m-3">
-						<div class="card border border-secondary border-4 bg-primary card-shadow text-white rounded-5 p-0 h-100">
-							<h4 class="text-white mx-3 my-2">{{ todo_list.title|u.truncate(18, '...', true) }}</h4>
-
-							<hr class="border border-secondary border-1 opacity-100 my-0"/>
-
-							<ul class="my-3 h-50 list-unstyled">
-								{% if todo_list.tasks is not empty %}
-									{% for task in todo_list.tasks|slice(0,5) %}
-										<li>
-											{% if task.completed %}
-												<i class="bi bi-check-lg bg-success rounded-circle mx-2"></i>
-											{% else %}
-												<i class="bi bi-check-lg bg-secondary rounded-circle mx-2"></i>
-											{% endif %}
-											{{task.content|u.truncate(18, '...', true)}}
-										</li>
-									{% endfor %}
-								{% else %}
-									<li class="text-center">No task</li>
-								{% endif %}
-							</ul>
-						</div>
-					</a>
+					{{ component('TodoCardComponent', { todo_list: todo_list}) }}
 				</div>
 			{% endfor %}
 		</div>
